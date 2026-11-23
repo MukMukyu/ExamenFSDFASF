@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Examen.Main
 {
@@ -24,31 +23,26 @@ namespace Examen.Main
 
         public static void Main(string[] args)
         {
-            string rutaArchivo = "Consultas/catalogo.json";
+            // El catálogo se guarda en JSON/biblioteca.json junto al ejecutable
+            // (el .csproj copia el archivo inicial al compilar)
+            string rutaArchivo = Path.Combine(AppContext.BaseDirectory, "JSON", "biblioteca.json");
 
+            try
+            {
+                Consultas.Consultas.asegurarArchivo(rutaArchivo);
+                Console.WriteLine($"Archivo de datos: {rutaArchivo}");
 
-            string id = "90";
-            string nombre = "1981";
-            string anio = "2012";
-            string autor = "Jorge Orwell";
-
-            Consultas.Consultas.setLibros("1", "El Principito", "1943", "Antoine de Saint-Exupéry", rutaArchivo);
-
-            //Obtener y mostrar la lista de libros
-            List<string> catalogo = Consultas.Consultas.getCatalogo(rutaArchivo);
-
-            //Inserta libros nuevos
-            List<string> insertar = Consultas.Consultas.setLibros(id, nombre, anio, autor, rutaArchivo);
-
-
-            //Busca libros por su nombre
-            List<string> buscar = Consultas.Consultas.searchLibro(nombre, rutaArchivo);
-
-            // Registrar un préstamo y mostrar la lista actualizada
-            List<string> catalogoTrasPrestamo = Consultas.Consultas.setPrestamos(rutaArchivo);
-
-            // Registrar una devolución y mostrar la lista actualizada
-            List<string> catalogoTrasDevolucion = Consultas.Consultas.setDevoluciones(rutaArchivo);
+                new Interfaces.Menu().SetMenuPrincipal(rutaArchivo);
+            }
+            catch (EndOfStreamException)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Fin de la entrada. Hasta pronto usuario!");
+            }
+            catch (Exception ex) when (ex is IOException or UnauthorizedAccessException or System.Text.Json.JsonException)
+            {
+                Console.WriteLine($"Error con el archivo de datos: {ex.Message}");
+            }
         }
     }
 }
