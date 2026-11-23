@@ -1,0 +1,119 @@
+{
+  "biblioteca": "Catálogo General de Libros",
+  "fecha_actualizacion": "2026-11-23",
+  "total_libros": 8,
+  "libros": [
+    {
+      "id": "LIB-001",
+      "nombre": "Cien años de soledad",
+      "anio": 1967,
+      "autor": "Gabriel García Márquez",
+      "prestamo": {
+        "disponible": true,
+        "en_prestamo": false,
+        "fecha_prestamo": null,
+        "fecha_limite_devolucion": null,
+        "requiere_devolucion": false,
+        "observaciones": "Disponible para préstamo"
+      }
+    },
+    {
+      "id": "LIB-002",
+      "nombre": "Pedro Páramo",
+      "anio": 1955,
+      "autor": "Juan Rulfo",
+      "prestamo": {
+        "disponible": false,
+        "en_prestamo": true,
+        "fecha_prestamo": "2026-11-01",
+        "fecha_limite_devolucion": "2026-11-15",
+        "requiere_devolucion": true,
+        "observaciones": "Plazo vencido; se requiere devolución inmediata"
+      }
+    },
+    {
+      "id": "LIB-003",
+      "nombre": "La sombra del viento",
+      "anio": 2001,
+      "autor": "Carlos Ruiz Zafón",
+      "prestamo": {
+        "disponible": false,
+        "en_prestamo": true,
+        "fecha_prestamo": "2026-11-18",
+        "fecha_limite_devolucion": "2026-12-02",
+        "requiere_devolucion": false,
+        "observaciones": "En préstamo dentro del plazo vigente"
+      }
+    },
+    {
+      "id": "LIB-004",
+      "nombre": "Ficciones",
+      "anio": 1944,
+      "autor": "Jorge Luis Borges",
+      "prestamo": {
+        "disponible": true,
+        "en_prestamo": false,
+        "fecha_prestamo": null,
+        "fecha_limite_devolucion": null,
+        "requiere_devolucion": false,
+        "observaciones": "Disponible para préstamo"
+      }
+    },
+    {
+      "id": "LIB-005",
+      "nombre": "1984",
+      "anio": 1949,
+      "autor": "George Orwell",
+      "prestamo": {
+        "disponible": false,
+        "en_prestamo": true,
+        "fecha_prestamo": "2026-11-05",
+        "fecha_limite_devolucion": "2026-11-19",
+        "requiere_devolucion": true,
+        "observaciones": "Plazo vencido; se requiere devolución"
+      }
+    },
+    {
+      "id": "LIB-006",
+      "nombre": "Rayuela",
+      "anio": 1963,
+      "autor": "Julio Cortázar",
+      "prestamo": {
+        "disponible": false,
+        "en_prestamo": false,
+        "fecha_prestamo": null,
+        "fecha_limite_devolucion": null,
+        "requiere_devolucion": false,
+        "observaciones": "No disponible para préstamo (solo consulta en sala)"
+      }
+    },
+    {
+      "id": "LIB-007",
+      "nombre": "Los detectives salvajes",
+      "anio": 1998,
+      "autor": "Roberto Bolaño",
+      "prestamo": {
+        "disponible": true,
+        "en_prestamo": false,
+        "fecha_prestamo": null,
+        "fecha_limite_devolucion": null,
+        "requiere_devolucion": false,
+        "observaciones": "Disponible para préstamo"
+      }
+    },
+    {
+      "id": "LIB-008",
+      "nombre": "Don Quijote de la Mancha",
+      "anio": 1605,
+      "autor": "Miguel de Cervantes",
+      "prestamo": {
+        "disponible": false,
+        "en_prestamo": true,
+        "fecha_prestamo": "2026-11-20",
+        "fecha_limite_devolucion": "2026-12-04",
+        "requiere_devolucion": false,
+        "observaciones": "En préstamo dentro del plazo vigente"
+      }
+    }
+  ]
+}
