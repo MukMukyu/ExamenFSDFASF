@@ -6,39 +6,40 @@ namespace Examen.Interfaces
 {
     internal class Menu
     {
-        public int mode = 0;
-        public int numOptions = 4;
-
         public void SetMenuPrincipal()
         {
+            int mode = 0;
+
             do
             {
-                ReadUserInput();
+                mode = ReadUserInput(3);
 
 
                 switch (mode)
                 {
                     case 1:
+                        AdministradorBiblioteca.Menu();
                         break;
                     case 2:
+                        AdministradorUsuario.Menu();
                         break;
                     case 3:
-                        break;
-                    case 4:
-                        break;
-                    case 0:
+                        Console.WriteLine("Hasta pronto usuario!");
                         break;
                 }
-            } while (mode < 4);
+            } while (mode < 3);
         }
 
-        private void ReadUserInput()
+        public static int ReadUserInput(int numOptions)
         {
+            int _mode = 0;
             do
             {
                 Console.WriteLine("Qué quiere hacer ahora?");
-                mode = Console.Read();
-            } while (mode > numOptions);
+                _mode = Console.Read();
+            } while (_mode > numOptions);
+
+            return _mode;
         }
     }
 }
